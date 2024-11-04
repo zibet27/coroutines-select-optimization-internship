@@ -37,41 +37,26 @@ kotlin {
     }
 
     sourceSets {
-        val commonMain by getting {
-            dependencies {
-                implementation(kotlin("stdlib"))
-            }
+        commonMain.dependencies {
+            implementation(kotlin("stdlib"))
         }
-        val commonTest by getting {
-            dependencies {
-                implementation(kotlin("test"))
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
-            }
+        commonTest.dependencies {
+            implementation(kotlin("test"))
+            implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
         }
-        val jvmTest by getting {
-            dependencies {
-                implementation("org.jetbrains.kotlinx:lincheck:2.34")
-            }
+        jvmTest.dependencies {
+            implementation("org.jetbrains.kotlinx:lincheck:2.34")
         }
 
-        val jsMain by getting {
-            dependencies {
-                api("org.jetbrains.kotlinx:atomicfu:0.25.0")
-            }
+        jsMain.dependencies {
+            api("org.jetbrains.kotlinx:atomicfu:0.25.0")
         }
-        val jsTest by getting {
-            dependencies {
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-js:1.9.0")
-            }
+        jsTest.dependencies {
+            implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-js:1.9.0")
         }
 
-        val nativeMain by getting {
-            dependencies {
-                api("org.jetbrains.kotlinx:atomicfu:0.25.0")
-            }
+        nativeMain.dependencies {
+            api("org.jetbrains.kotlinx:atomicfu:0.25.0")
         }
-        val nativeTest by getting
     }
-
-    jvmToolchain(22)
 }
